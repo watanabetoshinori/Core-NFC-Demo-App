@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="onl-QN-dck">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scanned Tags-->
+        <scene sceneID="oms-Se-zjW">
+            <objects>
+                <tableViewController id="CVe-nM-9lb" customClass="MessagesTableViewController" customModule="NFCReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3E2-DQ-ldH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="kNj-HI-cU5" style="IBUITableViewCellStyleDefault" id="LvB-KV-TLg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LvB-KV-TLg" id="z22-9S-MHu">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kNj-HI-cU5">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fAC-ut-Nmt" kind="show" identifier="ShowTag" id="Usq-ol-BTo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CVe-nM-9lb" id="Dvm-3D-bPW"/>
+                            <outlet property="delegate" destination="CVe-nM-9lb" id="ut7-n7-r3l"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scanned Tags" id="Fjq-XW-uiz">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" id="tak-jA-aEl">
+                            <connections>
+                                <action selector="begginScanning:" destination="CVe-nM-9lb" id="lVb-ga-zdm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tk5-9R-dHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="134"/>
+        </scene>
+        <!--Tag-->
+        <scene sceneID="rfq-Mf-Cac">
+            <objects>
+                <tableViewController id="fAC-ut-Nmt" customClass="MessageTableViewController" customModule="NFCReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="h7Q-Re-cJR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="93E-vp-Kn6" customClass="MessageTableViewCell" customModule="NFCReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="93E-vp-Kn6" id="55p-aL-Hn5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjv-fd-PQs">
+                                            <rect key="frame" x="20" y="10" width="335" height="23.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hjv-fd-PQs" firstAttribute="leading" secondItem="55p-aL-Hn5" secondAttribute="leading" constant="20" id="IHk-LP-BUj"/>
+                                        <constraint firstItem="Hjv-fd-PQs" firstAttribute="top" secondItem="55p-aL-Hn5" secondAttribute="top" constant="10" id="JA8-CK-21D"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hjv-fd-PQs" secondAttribute="bottom" constant="10" id="NOg-Ef-vB0"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hjv-fd-PQs" secondAttribute="trailing" constant="20" id="T7v-nn-ceH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="Hjv-fd-PQs" id="EPK-WI-d6Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fAC-ut-Nmt" id="WLu-R0-Lqp"/>
+                            <outlet property="delegate" destination="fAC-ut-Nmt" id="ZBe-Ta-bqI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tag" id="Q2a-3D-E1Z"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBp-ma-Pdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8KK-3S-9LT">
+            <objects>
+                <navigationController id="onl-QN-dck" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4cZ-Va-96g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CVe-nM-9lb" kind="relationship" relationship="rootViewController" id="Zjd-la-okK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KI1-by-saN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="134"/>
+        </scene>
+    </scenes>
+</document>
